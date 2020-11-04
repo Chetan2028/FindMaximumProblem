@@ -41,5 +41,41 @@ namespace MaximumNumberMSTest
             int expected = 500;
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// T.C -> 2.1
+        /// Givens the maximum float number at first position should return same number.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumFloatNumber_AtFirstPosition_ShouldReturnSameNumber()
+        {
+            float actual = MaximumNumberDemo.MaximumFloatNumber(50.5f, 20.87f, 10.37f);
+            float expected = 50.5f;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// T.C -> 2.2
+        /// Givens the maximum float number at second position should return same number.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumFloatNumber_AtSecondPosition_ShouldReturnSameNumber()
+        {
+            float actual = MaximumNumberDemo.MaximumFloatNumber(5.5f, 40.87897f, 10.37f);
+            float expected = 40.87897f;
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// T.C -> 2.3
+        /// Givens the maximum float number at third position should return same number.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumFloatNumber_AtThirdPosition_ShouldReturnSameNumber()
+        {
+            float actual = MaximumNumberDemo.MaximumFloatNumber(50.5f, 20.87f, 986.37f);
+            float expected = 986.37f;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
