@@ -4,70 +4,37 @@ using System.Text;
 
 namespace GenericsApplicationDemo
 {
-    public class MaximumNumberDemo
+    public class MaximumNumberDemo<T> where T : IComparable
     {
+        public T firstValue, secondValue, thirdValue;
+
         /// <summary>
-        /// Maximums the number.
+        /// Initializes a new instance of the <see cref="MaximumNumberDemo{T}"/> class.
         /// </summary>
-        /// <param name="firstNumber">The first number.</param>
-        /// <param name="secondNumber">The second number.</param>
-        /// <param name="thirdNumber">The third number.</param>
-        /// <returns></returns>
-        public static int MaximumNumber(int firstNumber, int secondNumber, int thirdNumber)
+        /// <param name="firstValue">The first value.</param>
+        /// <param name="secondValue">The second value.</param>
+        /// <param name="thirdValue">The third value.</param>
+        public MaximumNumberDemo(T firstValue, T secondValue, T thirdValue)
         {
-            if (firstNumber.CompareTo(secondNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
-            {
-                return firstNumber;
-            }
-            if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
-            {
-                return secondNumber;
-            }
-            if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
-            {
-                return thirdNumber;
-            }
-            return firstNumber;
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
         }
 
         /// <summary>
-        /// Maximums the float number.
+        /// Maximums the value.
         /// </summary>
-        /// <param name="firstNumber">The first number.</param>
-        /// <param name="secondNumber">The second number.</param>
-        /// <param name="ThirdNumber">The third number.</param>
+        /// <param name="firstValue">The first value.</param>
+        /// <param name="secondValue">The second value.</param>
+        /// <param name="thirdValue">The third value.</param>
         /// <returns></returns>
-        public static float MaximumFloatNumber(float firstNumber, float secondNumber, float thirdNumber)
-        {
-            if (firstNumber.CompareTo(secondNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
-            {
-                return firstNumber;
-            }
-            if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
-            {
-                return secondNumber;
-            }
-            if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
-            {
-                return thirdNumber;
-            }
-            return firstNumber;
-        }
-
-        /// <summary>
-        /// Maximums the string.
-        /// </summary>
-        /// <param name="firstValue">The input1.</param>
-        /// <param name="secondValue">The input2.</param>
-        /// <param name="thirdValue">The input3.</param>
-        /// <returns></returns>
-        public static string MaximumString(string firstValue, string secondValue, string thirdValue)
+        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
             {
                 return firstValue;
             }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(firstValue) > 0)
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
             {
                 return secondValue;
             }
@@ -75,7 +42,18 @@ namespace GenericsApplicationDemo
             {
                 return thirdValue;
             }
-            return firstValue;
+            throw new Exception("All values are same");
         }
+
+        /// <summary>
+        /// Maximums the method.
+        /// </summary>
+        /// <returns></returns>
+        public T MaxMethod()
+        {
+            T max = MaximumNumberDemo<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            return max;
+        }
+
     }
 }

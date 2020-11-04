@@ -7,110 +7,39 @@ namespace MaximumNumberMSTest
     public class MaximumNumberUnitTest
     {
         /// <summary>
-        /// T.C -> 1.1
-        /// Givens the maximum number at first position should return same number.
+        /// T.C -> 4.1
+        /// Givens the integer value to find maximum should return expectd value.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumber_AtFirstPosition_ShouldReturnSameNumber()
+       public void GivenIntegerValue_ToFindMaximum_ShouldReturnExpectdValue()
         {
-            int actual = MaximumNumberDemo.MaximumNumber(100, 20, 50);
-            int expected = 100;
+            int actual = new MaximumNumberDemo<int>(2, 4, 8).MaxMethod();
+            int expected = 8;
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// T.C -> 1.2
-        /// Givens the maximum number at second position should return same number.
+        /// T.C -> 4.2
+        /// Givens the float value to find maximum should return expected value.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumber_AtSecondPosition_ShouldReturnSameNumber()
+        public void GivenFloatValue_ToFindMaximum_ShouldReturnExpectedValue()
         {
-            int actual = MaximumNumberDemo.MaximumNumber(50, 150, 20);
-            int expected = 150;
+            float actual = new MaximumNumberDemo<float>(2.5f, 10.58f, 56.78f).MaxMethod();
+            float expected = 56.78f;
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// T.C -> 1.3
-        /// Givens the maximum number at third position should return same number.
+        /// Givens the string value to find maximum should return expected value.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumber_AtThirdPosition_ShouldReturnSameNumber()
+        public void GivenStringValue_ToFindMaximum_ShouldReturnExpectedValue()
         {
-            int actual = MaximumNumberDemo.MaximumNumber(50, 150, 500);
-            int expected = 500;
+            string actual = new MaximumNumberDemo<string>("Chetan" , "Abhishek","Om").MaxMethod();
+            string expected = "Om";
             Assert.AreEqual(expected, actual);
         }
 
-        /// <summary>
-        /// T.C -> 2.1
-        /// Givens the maximum float number at first position should return same number.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumFloatNumber_AtFirstPosition_ShouldReturnSameNumber()
-        {
-            float actual = MaximumNumberDemo.MaximumFloatNumber(50.5f, 20.87f, 10.37f);
-            float expected = 50.5f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// T.C -> 2.2
-        /// Givens the maximum float number at second position should return same number.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumFloatNumber_AtSecondPosition_ShouldReturnSameNumber()
-        {
-            float actual = MaximumNumberDemo.MaximumFloatNumber(5.5f, 40.87897f, 10.37f);
-            float expected = 40.87897f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// T.C -> 2.3
-        /// Givens the maximum float number at third position should return same number.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumFloatNumber_AtThirdPosition_ShouldReturnSameNumber()
-        {
-            float actual = MaximumNumberDemo.MaximumFloatNumber(50.5f, 20.87f, 986.37f);
-            float expected = 986.37f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// T.C -> 3.1
-        /// Givens the maximum string at first position should same string.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumString_AtFirstPosition_ShouldSameString()
-        {
-            string actual = MaximumNumberDemo.MaximumString("Guava", "Apple", "Banana");
-            string expecetd = "Guava";
-            Assert.AreEqual(expecetd, actual);
-        }
-        /// <summary>
-        /// T.C -> 3.2
-        /// Givens the maximum string at second position should same string.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumString_AtSecondPosition_ShouldSameString()
-        {
-            string actual = MaximumNumberDemo.MaximumString("Guava", "Papaya", "Banana");
-            string expecetd = "Papaya";
-            Assert.AreEqual(expecetd, actual);
-        }
-
-        /// <summary>
-        /// T.C -> 3.3
-        /// Givens the maximum string at third position should same string.
-        /// </summary>
-        [TestMethod]
-        public void GivenMaximumString_AtThirdPosition_ShouldSameString()
-        {
-            string actual = MaximumNumberDemo.MaximumString("Guava", "Apple", "Orange");
-            string expecetd = "Orange";
-            Assert.AreEqual(expecetd, actual);
-        }
     }
 }
