@@ -77,5 +77,40 @@ namespace MaximumNumberMSTest
             float expected = 986.37f;
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// T.C -> 3.1
+        /// Givens the maximum string at first position should same string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AtFirstPosition_ShouldSameString()
+        {
+            string actual = MaximumNumberDemo.MaximumString("Guava", "Apple", "Banana");
+            string expecetd = "Guava";
+            Assert.AreEqual(expecetd, actual);
+        }
+        /// <summary>
+        /// T.C -> 3.2
+        /// Givens the maximum string at second position should same string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AtSecondPosition_ShouldSameString()
+        {
+            string actual = MaximumNumberDemo.MaximumString("Guava", "Papaya", "Banana");
+            string expecetd = "Papaya";
+            Assert.AreEqual(expecetd, actual);
+        }
+
+        /// <summary>
+        /// T.C -> 3.3
+        /// Givens the maximum string at third position should same string.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaximumString_AtThirdPosition_ShouldSameString()
+        {
+            string actual = MaximumNumberDemo.MaximumString("Guava", "Apple", "Orange");
+            string expecetd = "Orange";
+            Assert.AreEqual(expecetd, actual);
+        }
     }
 }
