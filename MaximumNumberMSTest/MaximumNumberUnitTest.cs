@@ -7,7 +7,7 @@ namespace MaximumNumberMSTest
     public class MaximumNumberUnitTest
     {
         /// <summary>
-        /// 6.1
+        /// 5.1
         /// Givens the integer array should return maximum integer.
         /// </summary>
         [TestMethod]
@@ -20,7 +20,7 @@ namespace MaximumNumberMSTest
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
-        /// 6.2
+        /// 5.2
         /// Givens the float array should return maximum float number.
         /// </summary>
         [TestMethod]
@@ -34,11 +34,11 @@ namespace MaximumNumberMSTest
         }
 
         /// <summary>
-        /// 6.3
-        /// Givens the string array should return maximum integer.
+        /// 5.3
+        /// Givens the string array should return maximum string
         /// </summary>
         [TestMethod]
-        public void GivenStringArray_ShouldReturnMaximumInteger()
+        public void GivenStringArray_ShouldReturnMaximumString()
         {
             string[] stringArray = { "Chetan", "Zaid", "Omkar" };
             string expected = "Zaid";

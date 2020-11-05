@@ -12,13 +12,16 @@ namespace GenericsApplicationDemo
             string[] strArray = {"Chetan","Shah","Akshay"};
 
             MaximumNumberDemo<int> maximumNumberDemo = new MaximumNumberDemo<int>(intArray);
-            maximumNumberDemo.ToPrint();
+            int max = maximumNumberDemo.MaxMethod();
+            Console.WriteLine("Maximum Integer : " + max);
 
             MaximumNumberDemo<float> maximumNumberDemo1 = new MaximumNumberDemo<float>(floatArray);
-            maximumNumberDemo1.ToPrint();
+            float floatMax = maximumNumberDemo1.MaxMethod();
+            Console.WriteLine("Maximum Float Number  : " + floatMax);
 
             MaximumNumberDemo<string> maximumNumberDemo2 = new MaximumNumberDemo<string>(strArray);
-            maximumNumberDemo2.ToPrint();
+            string stringMax = maximumNumberDemo2.MaxMethod();
+            Console.WriteLine("Maximum String : " + stringMax);
         }
     }
 }

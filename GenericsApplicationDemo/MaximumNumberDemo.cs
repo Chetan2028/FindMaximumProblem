@@ -33,7 +33,7 @@ namespace GenericsApplicationDemo
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
-        public T MaxValue(T[] values)
+        public T MaxValue(params T[] values)
         {
             var sortedValues = Sort(values);
             return sortedValues[values.Length - 1];
@@ -47,15 +47,6 @@ namespace GenericsApplicationDemo
         {
             var max = MaxValue(this.value);
             return max;
-        }
-
-        /// <summary>
-        /// Converts to print.
-        /// </summary>
-        public void ToPrint()
-        {
-            var max = MaxMethod();
-            Console.WriteLine("Maximum : " + max);
         }
     }
 }
