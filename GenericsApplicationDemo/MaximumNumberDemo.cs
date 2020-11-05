@@ -6,43 +6,37 @@ namespace GenericsApplicationDemo
 {
     public class MaximumNumberDemo<T> where T : IComparable
     {
-        public T firstValue, secondValue, thirdValue;
+        public T[] value;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MaximumNumberDemo{T}"/> class.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
-        public MaximumNumberDemo(T firstValue, T secondValue, T thirdValue)
+        /// <param name="value">The value.</param>
+        public MaximumNumberDemo(T[] value)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.value = value;
+        }
+
+        /// <summary>
+        /// Sorts the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
         }
 
         /// <summary>
         /// Maximums the value.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
+        /// <param name="values">The values.</param>
         /// <returns></returns>
-        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+        public T MaxValue(T[] values)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("All values are same");
+            var sortedValues = Sort(values);
+            return sortedValues[values.Length - 1];
         }
 
         /// <summary>
@@ -51,9 +45,17 @@ namespace GenericsApplicationDemo
         /// <returns></returns>
         public T MaxMethod()
         {
-            T max = MaximumNumberDemo<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            var max = MaxValue(this.value);
             return max;
         }
 
+        /// <summary>
+        /// Converts to print.
+        /// </summary>
+        public void ToPrint()
+        {
+            var max = MaxMethod();
+            Console.WriteLine("Maximum : " + max);
+        }
     }
 }

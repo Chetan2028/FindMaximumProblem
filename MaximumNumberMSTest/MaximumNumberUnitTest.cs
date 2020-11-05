@@ -7,39 +7,44 @@ namespace MaximumNumberMSTest
     public class MaximumNumberUnitTest
     {
         /// <summary>
-        /// T.C -> 4.1
-        /// Givens the integer value to find maximum should return expectd value.
+        /// 6.1
+        /// Givens the integer array should return maximum integer.
         /// </summary>
         [TestMethod]
-       public void GivenIntegerValue_ToFindMaximum_ShouldReturnExpectdValue()
+        public void GivenIntegerArray_ShouldReturnMaximumInteger()
         {
-            int actual = new MaximumNumberDemo<int>(2, 4, 8).MaxMethod();
-            int expected = 8;
+            int[] intArray = { 3, 6, 8, 10, 15 };
+            int expected = 15;
+            MaximumNumberDemo<int> maximumNumberDemo = new MaximumNumberDemo<int>(intArray);
+            int actual = maximumNumberDemo.MaxMethod();
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// 6.2
+        /// Givens the float array should return maximum float number.
+        /// </summary>
+        [TestMethod]
+        public void GivenFloatArray_ShouldReturnMaximumFloatNumber()
+        {
+            float[] floatArray = { 1.56f, 2.87f, 5.89f, 50.46f };
+            float expected = 50.46f;
+            MaximumNumberDemo<float> maximumNumberDemo = new MaximumNumberDemo<float>(floatArray);
+            float actual = maximumNumberDemo.MaxMethod();
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// T.C -> 4.2
-        /// Givens the float value to find maximum should return expected value.
+        /// 6.3
+        /// Givens the string array should return maximum integer.
         /// </summary>
         [TestMethod]
-        public void GivenFloatValue_ToFindMaximum_ShouldReturnExpectedValue()
+        public void GivenStringArray_ShouldReturnMaximumInteger()
         {
-            float actual = new MaximumNumberDemo<float>(2.5f, 10.58f, 56.78f).MaxMethod();
-            float expected = 56.78f;
+            string[] stringArray = { "Chetan", "Zaid", "Omkar" };
+            string expected = "Zaid";
+            MaximumNumberDemo<string> maximumNumberDemo = new MaximumNumberDemo<string>(stringArray);
+            string actual = maximumNumberDemo.MaxMethod();
             Assert.AreEqual(expected, actual);
         }
-
-        /// <summary>
-        /// Givens the string value to find maximum should return expected value.
-        /// </summary>
-        [TestMethod]
-        public void GivenStringValue_ToFindMaximum_ShouldReturnExpectedValue()
-        {
-            string actual = new MaximumNumberDemo<string>("Chetan" , "Abhishek","Om").MaxMethod();
-            string expected = "Om";
-            Assert.AreEqual(expected, actual);
-        }
-
     }
 }

@@ -7,14 +7,18 @@ namespace GenericsApplicationDemo
     {
         static void Main(string[] args)
         {
-            int maxNumber = new MaximumNumberDemo<int>(10, 20, 30).MaxMethod();
-            Console.WriteLine("Maximum of Three integers : " + maxNumber);
+            int[] intArray = { 2, 4, 8, 10 };
+            float[] floatArray = { 5.6f, 10.5f, 8.9f, 59.65f };
+            string[] strArray = {"Chetan","Shah","Akshay"};
 
-            float floatNumber = new MaximumNumberDemo<float>(125.20f, 58.75f, 684.12f).MaxMethod();
-            Console.WriteLine("Maximum of Three Float NUmbers : " + floatNumber);
+            MaximumNumberDemo<int> maximumNumberDemo = new MaximumNumberDemo<int>(intArray);
+            maximumNumberDemo.ToPrint();
 
-            string stringResult = new MaximumNumberDemo<string>("Strawberry", "Orange", "Grapes").MaxMethod();
-            Console.WriteLine("Maximum of three strings : " + stringResult);
+            MaximumNumberDemo<float> maximumNumberDemo1 = new MaximumNumberDemo<float>(floatArray);
+            maximumNumberDemo1.ToPrint();
+
+            MaximumNumberDemo<string> maximumNumberDemo2 = new MaximumNumberDemo<string>(strArray);
+            maximumNumberDemo2.ToPrint();
         }
     }
 }
